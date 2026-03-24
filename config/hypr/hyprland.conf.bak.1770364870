@@ -1,0 +1,84 @@
+# Learn how to configure Hyprland: https://wiki.hyprland.org/Configuring/
+#debug:disable_logs = true
+
+# debug {
+#     suppress_errors = true
+# }
+
+# Use defaults Omarchy defaults (but don't edit these directly!)
+source = ~/.local/share/omarchy/default/hypr/autostart.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/media.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/clipboard.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/tiling-v2.conf
+source = ~/.local/share/omarchy/default/hypr/bindings/utilities.conf
+source = ~/.local/share/omarchy/default/hypr/envs.conf
+source = ~/.local/share/omarchy/default/hypr/looknfeel.conf
+source = ~/.local/share/omarchy/default/hypr/input.conf
+source = ~/.local/share/omarchy/default/hypr/windows.conf
+source = ~/.config/omarchy/current/theme/hyprland.conf
+
+# Change your own setup in these files (and overwrite any settings from defaults!)
+source = ~/.config/hypr/monitors.conf
+source = ~/.config/hypr/input.conf
+source = ~/.config/hypr/bindings.conf
+source = ~/.config/hypr/looknfeel.conf
+source = ~/.config/hypr/autostart.conf
+
+# Add any other personal Hyprland configuration below
+#windowrule = workspace 5, class:qemu
+#
+input {
+    kb_layout = us,ru,no
+    kb_options = caps:super,grp:alt_shift_toggle
+}
+
+# Remap Caps Lock to act as Super
+# bind = CAPS, exec, hyprctl dispatch MOD=SUPER
+
+plugin {
+    split-monitor-workspaces {
+        count = 5
+        keep_focused = 0
+        enable_notifications = 1
+        enable_persistent_workspaces = 1
+
+        # set this to 1 for gnome-like workspace switching
+        link_monitors = 0
+        # if you want a different monitor order
+        monitor_priority = HDMI-A-1, eDP-1
+
+        # you can also set max workspaces per monitor
+        max_workspaces = eDP-1, 5
+        max_workspaces = HDMI-A-1, 5
+    }
+}
+
+$mainMod = SUPER
+# Switch workspaces with mainMod + [0-5]
+bind = $mainMod, 1, split-workspace, 1
+bind = $mainMod, 2, split-workspace, 2
+bind = $mainMod, 3, split-workspace, 3
+bind = $mainMod, 4, split-workspace, 4
+bind = $mainMod, 5, split-workspace, 5
+
+
+
+animations {
+    enabled = true
+    bezier = linear, 0, 0, 1, 1
+    bezier = md3_standard, 0.2, 0, 0, 1
+    bezier = md3_decel, 0.05, 0.7, 0.1, 1
+    bezier = md3_accel, 0.3, 0, 0.8, 0.15
+    bezier = overshot, 0.05, 0.9, 0.1, 1.1
+    bezier = crazyshot, 0.1, 1.5, 0.76, 0.92
+    bezier = hyprnostretch, 0.05, 0.9, 0.1, 1.0
+    bezier = fluent_decel, 0.1, 1, 0, 1
+    bezier = easeInOutCirc, 0.85, 0, 0.15, 1
+    bezier = easeOutCirc, 0, 0.55, 0.45, 1
+    bezier = easeOutExpo, 0.16, 1, 0.3, 1
+    animation = windows, 1, 3, md3_decel, popin 60%
+    animation = border, 1, 10, default
+    animation = fade, 1, 2.5, md3_decel
+    animation = workspaces, 1, 3.5, easeOutExpo, slide
+    animation = specialWorkspace, 1, 3, md3_decel, slidevert
+}
