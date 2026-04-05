@@ -1,24 +1,35 @@
 {
+    "buffer_line_height": "comfortable",
+    "buffer_font_weight": 450.0,
     "edit_predictions": {
         "mode": "subtle",
-        "provider": "zed"
+        "provider": "zed",
     },
     "icon_theme": "JetBrains New UI Icons (Dark)",
     "$schema": "https://zed.dev/schema/settings.json",
     "base_keymap": "VSCode",
     "vim_mode": true,
+    "vim": {
+        "cursor_shape": {
+            "insert": "bar",
+            "normal": "block",
+            "visual": "block",
+            "replace": "underline",
+        },
+    },
+
     "theme": {
         "mode": "dark",
         "light": "Catppuccin Latte (Blur) [Heavy]",
-        "dark": "Material Dark",
+        "dark": "Nightfox - blurred",
     },
 
     /* Настройки шрифтов и текста */
-    "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+    "buffer_font_family": "Ubuntu",
     "buffer_font_features": {
         "calt": false,
     },
-    "buffer_font_size": 17,
+    "buffer_font_size": 20.0,
     "agent_buffer_font_size": 20,
     "tab_size": 4,
     "relative_line_numbers": "enabled",
@@ -37,7 +48,7 @@
     "restore_on_startup": "last_session",
     "when_closing_with_no_tabs": "keep_window_open",
     "ensure_final_newline_on_save": true,
-    "auto_indent": false,
+    "auto_indent": "none",
     "auto_indent_on_paste": false,
     "use_smartcase_search": true,
     "use_auto_surround": true,
@@ -101,7 +112,7 @@
     "agent": {
         "default_model": {
             "provider": "google",
-            "model": "gemini-2.5-flash",
+            "model": "gemini-3-flash-preview",
         },
     },
     "terminal": {
@@ -111,8 +122,6 @@
             "MISE_DISABLE": "1",
         },
     },
-
-    /* Языки и LSP */
 
     /* Языки и LSP */
     "languages": {

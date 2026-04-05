@@ -1,0 +1,155 @@
+{
+    "edit_predictions": {
+        "mode": "subtle",
+        "provider": "zed",
+    },
+    "icon_theme": "JetBrains New UI Icons (Dark)",
+    "$schema": "https://zed.dev/schema/settings.json",
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "vim": {
+        "cursor_shape": {
+            "insert": "bar",
+            "normal": "block",
+            "visual": "block",
+            "replace": "underline",
+        },
+    },
+
+    "theme": {
+        "mode": "dark",
+        "light": "Catppuccin Latte (Blur) [Heavy]",
+        "dark": "Material Dark",
+    },
+
+    /* Настройки шрифтов и текста */
+    "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+    "buffer_font_features": {
+        "calt": false,
+    },
+    "buffer_font_size": 17,
+    "agent_buffer_font_size": 20,
+    "tab_size": 4,
+    "relative_line_numbers": "enabled",
+    "cursor_shape": "block",
+    "cursor_blink": false,
+    "current_line_highlight": "none",
+    "show_whitespaces": "none",
+    "wrap_guides": [79],
+
+    /* Поведение редактора */
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000,
+        },
+    },
+    "restore_on_startup": "last_session",
+    "when_closing_with_no_tabs": "keep_window_open",
+    "ensure_final_newline_on_save": true,
+    "auto_indent": false,
+    "auto_indent_on_paste": false,
+    "use_smartcase_search": true,
+    "use_auto_surround": true,
+    "multi_cursor_modifier": "cmd_or_ctrl",
+    "seed_search_query_from_cursor": "never",
+    "extend_comment_on_newline": false,
+
+    /* Интерфейс и Панели */
+    "experimental.theme_overrides": {
+        "background.appearance": "transparent",
+    },
+    "status_bar": {
+        "experimental.show": true,
+    },
+    "title_bar": {
+        "show_onboarding_banner": false,
+        "show_project_items": false,
+        "show_branch_name": true,
+        "show_user_menu": false,
+    },
+    "project_panel": {
+        "dock": "right",
+        "default_width": 400,
+        "hide_root": true,
+        "auto_fold_dirs": false,
+        "starts_open": false,
+        "git_status": false,
+        "scrollbar": {
+            "show": "never",
+        },
+    },
+    "outline_panel": {
+        "default_width": 300,
+    },
+    "scrollbar": {
+        "show": "never",
+    },
+    "minimap": {
+        "show": "never",
+    },
+    "gutter": {
+        "min_line_number_digits": 0,
+        "folds": false,
+        "runnables": false,
+    },
+    "indent_guides": {
+        "enabled": false,
+    },
+    "toolbar": {
+        "quick_actions": false,
+    },
+    "centered_layout": {
+        "right_padding": 0.15,
+        "left_padding": 0.15,
+    },
+
+    /* Инструменты разработки */
+    "git_panel": {
+        "tree_view": true,
+    },
+    "agent": {
+        "default_model": {
+            "provider": "google",
+            "model": "gemini-3-flash-preview",
+        },
+    },
+    "terminal": {
+        "font_size": 19.0,
+        "font_family": "Noto Sans Buginese",
+        "env": {
+            "MISE_DISABLE": "1",
+        },
+    },
+
+    /* Языки и LSP */
+    "languages": {
+        "Python": {
+            "format_on_save": "on",
+            "language_servers": ["pyright", "ruff"],
+        },
+    },
+    "lsp": {
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    "configuration": "ruff.toml",
+                },
+            },
+        },
+        "pyright": {
+            "settings": {
+                "python": {
+                    "pythonPath": ".venv/bin/python",
+                },
+            },
+        },
+    },
+
+    /* Разное */
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "auto_update": false,
+    "show_edit_predictions": true,
+}
