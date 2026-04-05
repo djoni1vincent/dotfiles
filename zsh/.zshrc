@@ -34,6 +34,7 @@ alias ll='eza -lh --icons --group-directories-first --git'
 alias la='eza -a --icons --group-directories-first'
 alias lt='eza --tree --icons'
 alias nv="nvim"
+alias gpush='cd ~/dotfiles && git add . && git commit -m "auto update" && git push origin master && cd -'
 
 # === 7. Темы и кастомизация (должно быть в конце) ===
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
