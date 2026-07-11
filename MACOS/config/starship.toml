@@ -1,0 +1,103 @@
+# ── Format ────────────────────────────────────────────────────────────────────
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$fill\
+$cmd_duration\
+$line_break\
+$character"""
+
+# ── Palette ───────────────────────────────────────────────────────────────────
+palette = "mono"
+
+[palettes.mono]
+white  = "#e0e0e0"
+gray   = "#777777"
+dim    = "#444444"
+accent = "#7eb8da"   # soft blue — only the ❯ gets colour
+red    = "#e06c75"
+yellow = "#e8a87c"
+
+# ── Prompt character ──────────────────────────────────────────────────────────
+[character]
+success_symbol = "[❯](accent)"
+error_symbol   = "[❯](red)"
+vimcmd_symbol  = "[❮](gray)"
+
+# ── Directory ─────────────────────────────────────────────────────────────────
+[directory]
+style             = "bold white"
+truncation_length = 3
+truncate_to_repo  = true
+format            = "[$path]($style) "
+read_only         = " 󰌾"
+read_only_style   = "dim"
+
+[directory.substitutions]
+"Documents" = "󰈙"
+"Downloads" = "󰇚"
+"dev"       = "󰲃"
+"~"         = "~"
+
+# ── Git ───────────────────────────────────────────────────────────────────────
+[git_branch]
+style  = "gray"
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style    = "gray"
+format   = "[$all_status$ahead_behind]($style) "
+ahead    = "↑$count"
+behind   = "↓$count"
+diverged = "↑$ahead_count↓$behind_count"
+modified = "~"
+untracked= "?"
+staged   = "+"
+deleted  = "✗"
+renamed  = ""
+stashed  = ""
+
+# ── Python / Django ───────────────────────────────────────────────────────────
+[python]
+style           = "dim white"
+symbol          = " "
+format          = "[$symbol($version )($virtualenv)]($style) "
+detect_files    = ["requirements.txt","pyproject.toml","setup.py","manage.py",".python-version"]
+detect_extensions = ["py"]
+
+# ── Command duration (only shows if >2s) ──────────────────────────────────────
+[cmd_duration]
+style    = "dim"
+format   = "[$duration]($style)"
+min_time = 2_000
+
+# ── Fill (pushes duration to right) ───────────────────────────────────────────
+[fill]
+symbol = " "
+
+# ── Disabled modules ──────────────────────────────────────────────────────────
+[package]
+disabled = true
+[nodejs]
+disabled = true
+[rust]
+disabled = true
+[golang]
+disabled = true
+[java]
+disabled = true
+[docker_context]
+disabled = true
+[aws]
+disabled = true
+[gcloud]
+disabled = true
+[terraform]
+disabled = true
+[kubernetes]
+disabled = true
+[conda]
+disabled = true

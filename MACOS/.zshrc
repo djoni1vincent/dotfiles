@@ -54,7 +54,9 @@ alias nv="nvim"
 alias dj="cd ~/dev/Django/"
 alias ocs='nv ~/.config/opencode/opencode.json'
 alias oc='opencode'
+alias m='ncspot'
 
 # ----------------------------
-# API Keys
+# Starship prompt
 # ----------------------------
+eval "$(starship init zsh)"

@@ -1,0 +1,169 @@
+tap "anomalyco/tap"
+tap "felixkratz/formulae", "https://github.com/FelixKratz/homebrew-formulae"
+tap "minacle/chntpw"
+tap "nikitabobko/tap"
+# Apple Intelligence from the command-line, with OpenAi-compatible API server
+brew "apfel"
+# Download with resuming and segmented downloading
+brew "aria2"
+# Compile and execute C "scripts" in one go
+brew "c"
+# Extract files from Microsoft cabinet files
+brew "cabextract"
+# CD/DVD/Blu-ray premastering and recording software
+brew "cdrtools"
+# Share macOS clipboard with tmux and other local and remote apps
+brew "clipper"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+# Lint & Format HTML Templates
+brew "djlint"
+# GNU Emacs text editor
+brew "emacs", link: false
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Simple terminal UI for git commands
+brew "lazygit"
+# LLM inference in C/C++
+brew "llama.cpp"
+# Deep clean and optimize your Mac
+brew "mole"
+# Cross-platform ncurses Spotify client written in Rust
+brew "ncspot"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Retrieves currently playing media, and simulates media actions
+brew "nowplaying-cli"
+# Python interface to Tcl/Tk
+brew "python-tk@3.14"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Change macOS audio source from the command-line
+brew "switchaudio-osx"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Terminal multiplexer
+brew "tmux"
+# CPU, RAM memory, and load monitor for use with tmux
+brew "tmux-mem-cpu-load"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode", trusted: true
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar", trusted: true
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
+# Memory training application
+cask "anki"
+# E-books management software
+cask "calibre"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# UI for creating Windows installer ISO from UUPDump
+cask "crystalfetch"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Tool to write Fedora images to portable media files
+cask "fedora-media-writer"
+cask "font-hack-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Customise mouse behavior
+cask "linearmouse"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
+cask "mac-mouse-fix"
+# VPN client
+cask "mullvad-vpn"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Screenshot measurement and annotation tool
+cask "shottr"
+# Music streaming service
+cask "spotify"
+# Video game digital distribution service
+cask "steam"
+# Custom Discord App
+cask "vesktop"
+# Multiplayer code editor
+cask "zed"
+vscode "aaron-bond.better-comments"
+vscode "alefragnani.project-manager"
+vscode "asvetliakov.vscode-neovim"
+vscode "batisteo.vscode-django"
+vscode "beardedbear.beardedtheme"
+vscode "charliermarsh.ruff"
+vscode "codezombiech.gitignore"
+vscode "cstrap.flask-snippets"
+vscode "cstrap.python-snippets"
+vscode "demystifying-javascript.python-extensions-pack"
+vscode "donjayamanne.git-extension-pack"
+vscode "donjayamanne.githistory"
+vscode "eamodio.gitlens"
+vscode "ecmel.vscode-html-css"
+vscode "esbenp.prettier-vscode"
+vscode "formulahendry.auto-rename-tag"
+vscode "google.gemini-cli-vscode-ide-companion"
+vscode "jdinhlife.gruvbox"
+vscode "kaih2o.python-resource-monitor"
+vscode "kevinrose.vsc-python-indent"
+vscode "monosans.djlint"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "njqdev.vscode-python-typehint"
+vscode "oderwat.indent-rainbow"
+vscode "pkief.material-icon-theme"
+vscode "samuelcolvin.jinjahtml"
+vscode "sidthesloth.html5-boilerplate"
+vscode "sst-dev.opencode"
+vscode "subframe7536.custom-ui-style"
+vscode "tal7aouy.rainbow-bracket"
+vscode "thebarkman.vscode-djaneiro"
+vscode "usernamehw.errorlens"
+vscode "vintharas.learn-vim"
+vscode "vscodevim.vim"
+vscode "waseemakram.jinja-snippets-flask"
+vscode "yandeu.five-server"
+vscode "ziyasal.vscode-open-in-github"
+uv "cookiecutter"
+npm "corepack"

@@ -1,0 +1,242 @@
+{
+    "agent_servers": {
+        "claude-acp": {
+            "default_config_options": {
+                "effort": "high",
+                "model": "sonnet",
+            },
+            "type": "registry",
+        },
+        "opencode": {
+            "type": "registry",
+            "default_config_options": {
+                "effort": "medium",
+                "mode": "plan",
+            },
+        },
+    },
+
+    "context_servers": {
+        "mcp-server-github": {
+            "enabled": true,
+            "remote": false,
+            "settings": {
+                "github_personal_access_token": ""
+            }
+        },
+        "mcp-server-context7": {
+            "enabled": true,
+            "remote": false,
+            "settings": {
+                "context7_api_key": "",
+            },
+        },
+    },
+    "cli_default_open_behavior": "new_window",
+    "ui_font_size": 15.0,
+    "collaboration_panel": {
+        "dock": "left",
+    },
+    "tabs": {
+        "git_status": true,
+    },
+    "agent_ui_font_size": 15.0,
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "buffer_line_height": "comfortable",
+    "buffer_font_weight": 500.0,
+    "edit_predictions": {
+        "open_ai_compatible_api": {
+            "model": "",
+        },
+        "codestral": {
+            "model": "codestral-latest",
+        },
+        "mode": "subtle",
+        "provider": "zed",
+    },
+    "icon_theme": {
+        "mode": "system",
+        "light": "Catppuccin Frappé",
+        "dark": "JetBrains New UI Icons (Dark)",
+    },
+    "$schema": "https://zed.dev/schema/settings.json",
+    "base_keymap": "VSCode",
+    "vim_mode": true,
+    "vim": {
+        "cursor_shape": {
+            "insert": "bar",
+            "normal": "block",
+            "visual": "block",
+            "replace": "underline",
+        },
+    },
+
+    "theme": {
+        "mode": "dark",
+        "light": "macOS Classic Light",
+        "dark": "Gruvbox Dark",
+    },
+
+    "file_types": {
+        "Jinja2": ["html"],
+    },
+
+    /* Настройки шрифтов и текста */
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "buffer_font_features": {
+        "calt": false,
+    },
+    "buffer_font_size": 20.0,
+    "agent_buffer_font_size": 20,
+    "tab_size": 4,
+    "relative_line_numbers": "enabled",
+    "cursor_shape": "block",
+    "cursor_blink": true,
+    "current_line_highlight": "none",
+    "show_whitespaces": "none",
+    "wrap_guides": [79],
+
+    /* Поведение редактора — ТУТ ОСНОВНЫЕ ПРАВКИ */
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000,
+        },
+    },
+    "restore_on_startup": "last_session",
+    "when_closing_with_no_tabs": "keep_window_open",
+    "ensure_final_newline_on_save": true,
+    "auto_indent": "syntax_aware",
+    "auto_indent_on_paste": true,
+    "use_smartcase_search": true,
+    "use_auto_surround": true,
+    "multi_cursor_modifier": "cmd_or_ctrl",
+    "seed_search_query_from_cursor": "never",
+    "extend_comment_on_newline": false,
+
+    /* Интерфейс и Панели */
+    "experimental.theme_overrides": {
+        "background.appearance": "transparent",
+    },
+    "status_bar": {
+        "show_active_file": true,
+        "cursor_position_button": false,
+        "active_language_button": true,
+        "experimental.show": true,
+    },
+    "title_bar": {
+        "show_menus": false,
+        "show_onboarding_banner": false,
+        "show_project_items": false,
+        "show_branch_name": true,
+        "show_user_menu": true,
+    },
+    "project_panel": {
+        "dock": "right",
+        "default_width": 400,
+        "hide_root": true,
+        "auto_fold_dirs": false,
+        "starts_open": false,
+        "git_status": true,
+        "scrollbar": {
+            "show": "never",
+        },
+    },
+    "outline_panel": {
+        "dock": "left",
+        "default_width": 300,
+    },
+    "scrollbar": {
+        "show": "never",
+    },
+    "minimap": {
+        "show": "never",
+    },
+    "gutter": {
+        "min_line_number_digits": 0,
+        "folds": false,
+        "runnables": false,
+    },
+    "indent_guides": {
+        "enabled": false,
+    },
+    "toolbar": {
+        "quick_actions": false,
+    },
+    "centered_layout": {
+        "right_padding": 0.15,
+        "left_padding": 0.15,
+    },
+
+    /* Инструменты разработки */
+    "git_panel": {
+        "dock": "left",
+        "tree_view": true,
+    },
+    "agent": {
+        "inline_assistant_model": {
+            "provider": "opencode",
+            "model": "go/deepseek-v4-flash",
+            "enable_thinking": false,
+        },
+        "dock": "right",
+        "default_model": {
+            "effort": "xhigh",
+            "enable_thinking": true,
+            "provider": "opencode",
+            "model": "zen/deepseek-v4-flash",
+        },
+    },
+    "terminal": {
+        "font_size": 16.0,
+        "font_family": "JetBrainsMono Nerd Font Mono",
+        "env": {
+            "MISE_DISABLE": "1",
+        },
+    },
+
+    /* Языки и LSP */
+    "languages": {
+        "Jinja2": {
+            "indent_guides": {
+                "enabled": true,
+            },
+            "auto_indent_on_paste": true,
+        },
+        "Python": {
+            "format_on_save": "on",
+            "language_servers": ["ty", "ruff"],
+        },
+    },
+    "lsp": {
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    "configuration": "ruff.toml",
+                },
+            },
+            "activitywatch": {
+                "settings": {
+                    "host": "127.0.0.1",
+                    "port": 5600,
+                },
+            },
+        },
+        "pyright": {
+            "settings": {
+                "python": {
+                    "pythonPath": ".venv/bin/python",
+                },
+            },
+        },
+    },
+
+    /* Разное */
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+    },
+    "auto_update": true,
+    "show_edit_predictions": true,
+}

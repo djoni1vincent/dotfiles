@@ -1,0 +1,164 @@
+#!/usr/bin/env bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+WHITE=0xFFffffff
+GRAY=0xFF888888
+DIM=0xFF444444
+TRANSPARENT=0x00000000
+
+# ── Bar — transparent, items float over wallpaper ─────────────────────────────
+sketchybar \
+  --bar position=top \
+        height=36 \
+        color=$TRANSPARENT \
+        blur_radius=0 \
+        padding_left=8 \
+        padding_right=8
+
+# ── Defaults ──────────────────────────────────────────────────────────────────
+sketchybar --default \
+  icon.font="Hack Nerd Font:Regular:14.0" \
+  icon.color=$WHITE \
+  icon.padding_left=4 \
+  icon.padding_right=4 \
+  label.font="SF Pro Text:Semibold:13.0" \
+  label.color=$WHITE \
+  label.padding_left=4 \
+  label.padding_right=4
+
+# ── Aerospace workspace indicators ────────────────────────────────────────────
+sketchybar --add event aerospace_workspace_change
+
+for sid in $(aerospace list-workspaces --all); do
+  sketchybar --add item space.$sid left \
+    --subscribe space.$sid aerospace_workspace_change \
+    --set space.$sid \
+      drawing=off \
+      icon.drawing=off \
+      label="$sid" \
+      label.font="SF Pro Text:Semibold:11.0" \
+      label.color=0xFF888888 \
+      label.padding_left=7 \
+      label.padding_right=7 \
+      padding_left=1 \
+      padding_right=1 \
+      background.drawing=on \
+      background.color=$TRANSPARENT \
+      background.corner_radius=5 \
+      background.height=22 \
+      click_script="aerospace workspace $sid" \
+      script="$PLUGIN_DIR/aerospace.sh $sid"
+done
+
+for sid in $(aerospace list-workspaces --monitor all --empty no); do
+  sketchybar --set space.$sid drawing=on
+done
+
+focused=$(aerospace list-workspaces --focused)
+sketchybar --set space.$focused \
+  drawing=on \
+  label.color=0xFF000000 \
+  background.color=0xFFffffff
+
+# ── CPU ───────────────────────────────────────────────────────────────────────
+sketchybar --add item cpu left \
+  --set cpu \
+    update_freq=5 \
+    icon="󰻠" \
+    icon.font="Hack Nerd Font:Regular:12.0" \
+    icon.color=$GRAY \
+    icon.padding_right=2 \
+    label.font="SF Pro Text:Regular:11.0" \
+    label.color=$GRAY \
+    padding_left=10 \
+    script="$PLUGIN_DIR/cpu.sh"
+
+# ── RAM ───────────────────────────────────────────────────────────────────────
+sketchybar --add item memory left \
+  --set memory \
+    update_freq=10 \
+    icon="󰍛" \
+    icon.font="Hack Nerd Font:Regular:12.0" \
+    icon.color=$GRAY \
+    icon.padding_right=2 \
+    label.font="SF Pro Text:Regular:11.0" \
+    label.color=$GRAY \
+    padding_left=4 \
+    script="$PLUGIN_DIR/memory.sh"
+
+# ── Media player — left side, shows ncspot / any Now Playing source ───────────
+sketchybar --add item media left \
+  --set media \
+    drawing=off \
+    update_freq=5 \
+    icon.font="Hack Nerd Font:Regular:13.0" \
+    icon.color=0xFF555555 \
+    icon.padding_right=4 \
+    label.font="SF Pro Text:Regular:12.0" \
+    label.color=0xFFaaaaaa \
+    padding_left=12 \
+    script="$PLUGIN_DIR/media.sh"
+
+# ── Right side — date is rightmost, clock to its left ─────────────────────────
+# (sketchybar stacks right items from right edge inward, first added = rightmost)
+
+# Date — rightmost on right side
+sketchybar --add item date right \
+  --set date \
+    update_freq=60 \
+    icon.drawing=off \
+    label.font="SF Pro Text:Regular:12.0" \
+    label.color=$GRAY \
+    padding_right=4 \
+    script="$PLUGIN_DIR/date.sh" \
+    click_script="open -a Calendar"
+
+# Clock — left of date
+sketchybar --add item clock right \
+  --set clock \
+    update_freq=10 \
+    icon.drawing=off \
+    label.font="SF Pro Text:Semibold:14.0" \
+    label.color=$WHITE \
+    padding_right=6 \
+    script="$PLUGIN_DIR/clock.sh" \
+    click_script="open -a Calendar"
+
+# ── Language indicator ────────────────────────────────────────────────────────
+sketchybar --add item language right \
+  --set language \
+    update_freq=1 \
+    icon.drawing=off \
+    label.font="SF Pro Text:Semibold:11.0" \
+    label.color=0xFF666666 \
+    padding_left=8 \
+    padding_right=2 \
+    script="$PLUGIN_DIR/language.sh" \
+  --subscribe language front_app_switched
+
+# ── WiFi — right side ─────────────────────────────────────────────────────────
+sketchybar --add item wifi right \
+  --set wifi \
+    update_freq=5 \
+    icon.font="Hack Nerd Font:Regular:15.0" \
+    icon.color=$WHITE \
+    icon.padding_right=2 \
+    label.font="SF Pro Text:Regular:11.0" \
+    label.color=$GRAY \
+    padding_left=8 \
+    click_script="open 'x-apple.systempreferences:com.apple.preference.network'" \
+    script="$PLUGIN_DIR/wifi.sh"
+
+# ── Battery — right side ──────────────────────────────────────────────────────
+sketchybar --add item battery right \
+  --set battery \
+    update_freq=120 \
+    icon.font="Hack Nerd Font:Regular:14.0" \
+    label.font="SF Pro Text:Regular:12.0" \
+    label.color=$GRAY \
+    padding_left=6 \
+    script="$PLUGIN_DIR/battery.sh" \
+  --subscribe battery system_woke power_source_change
+
+sketchybar --update

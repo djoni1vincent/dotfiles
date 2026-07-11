@@ -1,0 +1,42 @@
+# Ghostty config — основан на iTerm2 Default профиле
+
+font-family = JetBrainsMono NFM
+font-feature = -calt, -liga, -dlig
+font-size = 18
+
+# background = #282828
+# foreground = #D4BE98
+
+selection-background = #D4BE98
+selection-foreground = #282828
+
+cursor-color = #D4BE98
+cursor-text = #282828
+
+background-opacity = 0.8
+background-blur = true
+
+palette = 0=#282828
+palette = 1=#EA6962
+palette = 2=#A9B665
+palette = 3=#D8A657
+palette = 4=#7DAEA3
+palette = 5=#D3869B
+palette = 6=#89B482
+palette = 7=#D4BE98
+palette = 8=#7C6F64
+palette = 9=#EA6962
+palette = 10=#A9B665
+palette = 11=#D8A657
+palette = 12=#7DAEA3
+palette = 13=#D3869B
+palette = 14=#89B482
+palette = 15=#DDC7A1
+
+scrollback-limit = 2000
+mouse-reporting = true
+
+macos-titlebar-style = tabs
+working-directory = /Users/djoni1vincent
+window-inherit-working-directory = true
+keybind = super+grave_accent=toggle_quick_terminal
